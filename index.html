@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta - Bloqueo Estudiantil</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Encuesta sobre Bloqueo Estudiantil</h1>
+        <p>Queremos conocer tu opinión sobre el bloqueo estudiantil en la Facultad de Ingeniería.</p>
+        <button onclick="startSurvey()">Iniciar Encuesta</button>
+        
+        <form id="surveyForm" class="hidden">
+            <label>¿Has experimentado ansiedad por presión académica?</label><br>
+            <input type="radio" name="ansiedad" value="Sí"> Sí
+            <input type="radio" name="ansiedad" value="No"> No
+            <br><br>
+
+            <label>¿Cómo manejas el estrés académico?</label><br>
+            <select name="estrategia">
+                <option value="Ejercicio">Ejercicio</option>
+                <option value="Meditación">Meditación</option>
+                <option value="Juegos">Juegos</option>
+                <option value="No hago nada">No hago nada</option>
+            </select>
+            <br><br>
+            
+            <label>Comentario adicional:</label><br>
+            <textarea name="comentario" rows="4" cols="40"></textarea>
+            <br><br>
+            
+            <button type="button" onclick="submitSurvey()">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function startSurvey() {
+            document.getElementById('surveyForm').classList.remove('hidden');
+        }
+
+        function submitSurvey() {
+            alert('Gracias por participar en la encuesta.');
+            document.getElementById('surveyForm').reset();
+        }
+    </script>
+</body>
+</html>
